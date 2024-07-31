@@ -39,7 +39,35 @@ with st.expander("Data Profiling"):
         pr = ProfileReport(df)
 
         # Display to streamlit
-        st_profile_report(pr)
+        pr_html = pr.to_html()
+
+        # HTML wrapper with scrolling enabled
+        scrollable_html = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                body {{
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                }}
+                #container {{
+                    height: 800px; /* Adjust the height as needed */
+                    overflow: auto;
+                    padding: 10px;
+                }}
+            </style>
+        </head>
+        <body>
+            <div id="container">
+                {pr_html}
+            </div>
+        </body>
+        </html>
+        """
+
+        components.html(pr_html, height = 800, scrolling=True)
 
 # --- Description
 
