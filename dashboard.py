@@ -8,7 +8,7 @@ from streamlit_pandas_profiling import st_profile_report
 
 # --- Data Import
 
-df = pd.read_csv("data_input/weather_cleaned.csv")
+df = pd.read_csv("weather_cleaned.csv")
 df.drop('Unnamed: 0', axis=1, inplace=True)
 
 # Convert 'date' column to datetime
