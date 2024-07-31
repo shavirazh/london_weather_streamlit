@@ -1,4 +1,4 @@
-streamlit
+streamlit==1.36.0
 streamlit-pandas-profiling
 pandas
 ydata_profiling==4.1.0
