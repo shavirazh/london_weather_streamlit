@@ -1,6 +1,6 @@
 streamlit
 streamlit-pandas-profiling
 pandas
-ydata_profiling
+ydata_profiling==4.1.0
 numba==0.58.1
 plotly_express
